@@ -125,7 +125,7 @@ public class IndexController {
     @RequestMapping(value = "/loginOut", method = RequestMethod.GET)
     public String loginOut(HttpSession session) {
         //从session中删除user属性，用户退出登录
-        session.removeAttribute("user");
+        session.removeAttribute("username");
         return "index";
     }
 
