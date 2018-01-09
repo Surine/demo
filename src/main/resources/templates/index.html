@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.css"  media="screen,projection"/>
+</head>
+<body>
+<script type="text/javascript" src="../static/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="../static/js/materialize.js"></script>
+<h1> <span th:text="${result}"></span></h1>
+<h1>欢迎 ： <span  th:text="${session.user}?${session.user.getUsername()}:'（您未登录）'" ></span> </h1>
+<a th:href="@{/register}">点击注册</a>
+<a th:href="@{/login}" th:if="${session.user==null}">点击登录</a>
+<a th:href="@{/loginOut}" th:unless="${session.user==null}">退出登陆</a>
+</body>
+</html>
